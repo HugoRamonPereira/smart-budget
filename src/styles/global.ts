@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
    body, input, textarea, button {
       font-family: 'Red Hat Display', sans-serif;
-      font-weight: 300;
+      font-weight: 500;
    }
    
    h1, h2, h3, h4, h5, h6, strong {
