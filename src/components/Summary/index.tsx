@@ -11,7 +11,7 @@ export function Summary() {
                <p>Income</p>
                <Icons src={incomeIcon} alt="Income" />
             </header>
-            <strong>R$1000,00</strong>
+            <strong>$ 1000,00</strong>
          </div>
 
          <div>
@@ -19,7 +19,7 @@ export function Summary() {
                <p>Expense</p>
                <Icons src={expenseIcon} alt="Expense" />
             </header>
-            <strong>- R$500,00</strong>
+            <strong>- $ 500,00</strong>
          </div>
 
          <div className="green-total">
@@ -27,7 +27,7 @@ export function Summary() {
                <p>Total</p>
                <TotalIcon src={totalIcon} alt="Total" />
             </header>
-            <strong>R$500,00</strong>
+            <strong>$ 500,00</strong>
          </div>
       </Container>
    )
