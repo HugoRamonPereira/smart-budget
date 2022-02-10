@@ -1,4 +1,4 @@
-import sblogo from '../../assets/Logo Name Centered.svg'
+import sblogo from '../../assets/logo-name-centered.svg'
 import { Container, Content, Logo } from './styles'
 import { AiOutlinePlus } from 'react-icons/ai'
 
