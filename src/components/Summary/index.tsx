@@ -1,9 +1,28 @@
+// import { useContext } from 'react';
 import incomeIcon from '../../assets/green-circle.svg'
 import expenseIcon from '../../assets/red-circle.svg'
 import totalIcon from '../../assets/totalll.svg'
+import { useTransactions } from '../../hooks/useTransactions';
 import { Container, Icons, TotalIcon } from "./styles";
 
 export function Summary() {
+   const { transactions } = useTransactions()
+   
+   const summary = transactions.reduce((acc, transaction) => {
+      if(transaction.type === 'deposit') {
+         acc.deposits += transaction.amount
+         acc.total += transaction.amount
+      } else {
+         acc.withdrawals += transaction.amount
+         acc.total -= transaction.amount
+      }
+      return acc
+   }, {
+      deposits: 0,
+      withdrawals: 0,
+      total: 0
+   })
+
    return (
       <Container>
          <div>
@@ -11,7 +30,12 @@ export function Summary() {
                <p>Income</p>
                <Icons src={incomeIcon} alt="Income" />
             </header>
-            <strong>$ 1000,00</strong>
+            <strong>
+                  {new Intl.NumberFormat('pt-BR',{
+                           style: 'currency',
+                           currency: 'BRL',
+                  }).format(summary.deposits)}
+            </strong>
          </div>
 
          <div>
@@ -19,15 +43,25 @@ export function Summary() {
                <p>Expense</p>
                <Icons src={expenseIcon} alt="Expense" />
             </header>
-            <strong>- $ 500,00</strong>
+            <strong> -
+            {new Intl.NumberFormat('pt-BR',{
+                     style: 'currency',
+                     currency: 'BRL',
+            }).format(summary.withdrawals)}
+            </strong>
          </div>
 
-         <div className="green-total">
+         <div className={summary.total >= 0 ? 'green-total' : 'red-total'}>
             <header>
                <p>Total</p>
                <TotalIcon src={totalIcon} alt="Total" />
             </header>
-            <strong>$ 500,00</strong>
+            <strong>
+               {new Intl.NumberFormat('pt-BR',{
+                        style: 'currency',
+                        currency: 'BRL',
+               }).format(summary.total)}
+            </strong>
          </div>
       </Container>
    )

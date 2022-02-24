@@ -35,6 +35,11 @@ export const Container = styled.div`
       background: var(--green);
       color: #fff;
    }
+
+   &.red-total {
+      background: var(--red);
+      color: #fff;
+   }
 }
 `
 

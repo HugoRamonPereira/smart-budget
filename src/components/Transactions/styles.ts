@@ -21,7 +21,6 @@ export const Container = styled.div`
       border: 0;
       background: var(--shape);
       color: var(--text-body);
-      /* border-radius: 0.25rem; */
 
       &:first-child {
       color: var(--text-title);
@@ -34,5 +33,17 @@ export const Container = styled.div`
          color: var(--red);
       }
     
+   }
+`
+
+export const Trash = styled.button`
+   background: transparent;
+   border: none;
+   font-size: 1.2rem;
+   color: var(--text-body);
+   transition: .2s ease-in;
+
+   &:hover {
+      color: var(--text-title);
    }
 `

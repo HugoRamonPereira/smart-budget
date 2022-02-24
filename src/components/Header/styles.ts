@@ -31,7 +31,7 @@ export const Content = styled.div`
       gap: .2rem;
 
       &:hover {
-         filter: brightness(.93);
+         filter: brightness(.96);
       }
    }
 ` 
