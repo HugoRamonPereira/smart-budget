@@ -32,7 +32,6 @@ export const Container = styled.div`
       &.withdraw {
          color: var(--red);
       }
-    
    }
 `
 
@@ -46,4 +45,11 @@ export const Trash = styled.button`
    &:hover {
       color: var(--text-title);
    }
+`
+
+export const EmptyTransaction = styled.h1`
+   text-align: center;
+    font-size: 22px;
+    margin-top: 4rem;
+    opacity: 0.5;
 `

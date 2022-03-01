@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react"; 
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
 interface TransactionProps {
@@ -14,18 +14,7 @@ interface TransactionsProviderProps {
    children: ReactNode;
 }
 
-// interface NewTransactionDataInput {
-//    title: string,
-//    amount: number,
-//    type: string,
-//    category: string
-// }
-
-// This is a way of getting types from another interface by inheriting and omitting the id and createdAt, cause we don't need them
 type NewTransactionDataInput = Omit<TransactionProps, 'id' | 'createdAt'>
-
-// This is a way of getting types from another interface by inheriting and selecting which types we want to inherit
-// type NewTransactionDataInput = Pick<TransactionProps, 'title' | 'amount' | 'type' | 'category'>
 
 interface TransactionContextData {
    transactions: TransactionProps[],
@@ -44,6 +33,7 @@ export function TransactionsProvider({ children } : TransactionsProviderProps){
    }, [])
 
    async function createNewTransaction(transactionInput: NewTransactionDataInput) {
+      console.log("transactionInput", transactionInput)
       const response = await api.post('/transactions', {
          ...transactionInput,
          createdAt: new Date()

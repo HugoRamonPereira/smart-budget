@@ -17,6 +17,7 @@ export const Container = styled.form`
       border: 1px solid #d7d7d7;
       font-weight: 500;
       font-size: 1rem;
+      /* margin-bottom: .5rem; */
 
       &::placeholder {
          color: var(--text-body);
@@ -26,6 +27,10 @@ export const Container = styled.form`
          margin-top: 1rem;
       }
    }
+
+   small.formik-error {
+      color: var(--red)
+   } 
 
    button[type="submit"] {
       width: 100%;
@@ -71,8 +76,7 @@ const borderColors = {
 
 
 export const RadioButton = styled.button<RadioButtonProps>`
-      height: 3.5rem;
-      /* border: 1px solid #d7d7d7; */
+      height: 3.5rem;   
       border: ${(props) => props.isActive
          ? borderColors[props.activeBorder]
          : '1px solid #d7d7d7'
@@ -99,4 +103,10 @@ export const IncomeImg = styled.img`
 `
 export const ExpenseImg = styled.img`
    width: 1.6rem;
+`
+
+export const Error = styled.p`
+   color: var(--red);
+   margin: .2rem 0;
+   font-size: .8rem;
 `
