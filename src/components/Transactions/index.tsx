@@ -26,8 +26,8 @@ function onDeleteTransactionRow(id: number) {
          {transactions.length === 0 ? 
          <>
          <Lottie options={defaultOptions}
-                 height={300}
-                 width={700}
+                 height={250}
+                 width={600}
           />
          <EmptyTransaction>You don't have any transactions yet!</EmptyTransaction> 
          </>

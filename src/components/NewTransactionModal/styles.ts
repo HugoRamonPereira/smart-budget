@@ -17,7 +17,7 @@ export const Container = styled.form`
       border: 1px solid #d7d7d7;
       font-weight: 500;
       font-size: 1rem;
-      /* margin-bottom: .5rem; */
+      /* margin-bottom: 1.3rem; */
 
       &::placeholder {
          color: var(--text-body);
@@ -27,10 +27,6 @@ export const Container = styled.form`
          margin-top: 1rem;
       }
    }
-
-   small.formik-error {
-      color: var(--red)
-   } 
 
    button[type="submit"] {
       width: 100%;
@@ -101,12 +97,19 @@ export const RadioButton = styled.button<RadioButtonProps>`
 export const IncomeImg = styled.img`
    width: 1.6rem;
 `
+
 export const ExpenseImg = styled.img`
    width: 1.6rem;
 `
 
+export const Error1 = styled.p`
+   color: var(--red);
+   margin-top: .3rem;
+   margin-bottom: 1rem;
+   font-size: .7rem;
+`
 export const Error = styled.p`
    color: var(--red);
-   margin: .2rem 0;
-   font-size: .8rem;
+   margin-top: .3rem;
+   font-size: .7rem;
 `

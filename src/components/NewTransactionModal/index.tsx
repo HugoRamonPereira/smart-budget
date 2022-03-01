@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "react-modal";
-import { Container, TransactionTypeContainer, IncomeImg, ExpenseImg, RadioButton } from "./styles";
+import { Container, TransactionTypeContainer, IncomeImg, ExpenseImg, RadioButton, Error1, Error } from "./styles";
 import xClose from "../../assets/close-modal-btn.svg";
 import ExpenseIcon from "../../assets/red-circle.svg";
 import IncomeIcon from "../../assets/green-circle.svg";
@@ -28,7 +28,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
 
     await createNewTransaction({ ...values, type: type, amount: values.value});
 
-    setType("income")
+    setType("deposit")
     onRequestClose()
   }
 
@@ -45,6 +45,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
     }),
     onSubmit: (values) => {
       handleCreateNewTransaction(values)
+      close()
     },
   })
 
@@ -77,7 +78,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.touched.title && formik.errors.title && <small className="formik-error">{formik.errors.title}</small>}
+            {formik.touched.title && formik.errors.title && <Error1 className="formik-error">{formik.errors.title}</Error1>}
             <input
               placeholder="Value"
               type="number"
@@ -86,7 +87,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.touched.value && formik.errors.value && <small className="formik-error">{formik.errors.value}</small>}
+            {formik.touched.value && formik.errors.value && <Error className="formik-error">{formik.errors.value}</Error>}
             <TransactionTypeContainer>
               <RadioButton
                 type="button"
@@ -122,7 +123,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
             />
-            {formik.touched.category && formik.errors.category && <small className="formik-error">{formik.errors.category}</small>}
+            {formik.touched.category && formik.errors.category && <Error className="formik-error">{formik.errors.category}</Error>}
             <button type="submit">Save</button>
           </Container>
     </Modal>
