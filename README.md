@@ -23,7 +23,7 @@ This is a preview of the application
 
 <br/>
 
-<img src="./public/assets/Postfinal 2.gif/>
+<img src="./public/assets/demo.gif/>
 
 <br/>
 
