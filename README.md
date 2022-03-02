@@ -4,13 +4,13 @@ An app to list your income and expenses using [React.js](https://reactjs.org/), 
 
 <p>&nbsp;</p>
 
-<p align="center" justify-content="center">
-<img src="./public/assets/React-icon.svg.png" width="50">
-<img src="./public/assets/Typescript.png" width="60"/>
-<img src="./public/assets/styled-components.png" width="95"/>
-<img src="./public/assets/miragejs.png" width="90" />
-<img src="./public/assets/Formik.png" width="70"/>
-<img src="./public/assets/Lottie_Logo.png" width="70"/>
+<p align-items="center" justify-content="center">
+<img src="./public/assets/React-icon.svg.png" width="80">
+<img src="./public/assets/Typescript.png" width="50"/>
+<img src="./public/assets/styled-components.png" width="50"/>
+<img src="./public/assets/miragejs.png" width="50" />
+<img src="./public/assets/Formik.png" width="50"/>
+<img src="./public/assets/Lottie_Logo.png" height="35" width="110"/>
 </p>
 
 <p>&nbsp;</p>
@@ -23,7 +23,7 @@ This is a preview of the application
 
 <br/>
 
-<img src="./public/assets/demo.gif/>
+<img src="./public/assets/demo.gif" />
 
 <br/>
 
